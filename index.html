@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常远航 - 个人网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #667eea;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 3em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #333;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .contact-item span:first-child {
+            font-size: 1.3em;
+            width: 25px;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .education-item, .award-item, .project-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .education-item h3 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .time {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .gpa {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        .project-list {
+            list-style: none;
+        }
+
+        .project-list li {
+            background: #f8f9fa;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+        }
+
+        .project-list li strong {
+            color: #333;
+        }
+
+        .personal-statement {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            line-height: 1.8;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .personal-statement h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .profile-info {
+                width: 100%;
+            }
+
+            .name {
+                font-size: 2em;
+                text-align: center;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <img src="profile.jpg" alt="常远航" class="profile-img">
+                <div class="profile-info">
+                    <h1 class="name">常远航</h1>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📧</span>
+                            <span>邮箱：cyhang@mail.ustc.edu.cn</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>📱</span>
+                            <span>电话：15919688656</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>🎂</span>
+                            <span>出生年月：2006年7月</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>👤</span>
+                            <span>政治面貌：共青团员</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <h2>🎓 教育背景</h2>
+                <div class="education-item">
+                    <h3>中国科学技术大学 少年班学院</h3>
+                    <div class="time">2023年9月 - 至今</div>
+                    <p><strong>专业：</strong>数学与应用数学（辅修计算机科学与技术）</p>
+                    <span class="gpa">GPA 3.75/4.3</span>
+                    <div style="margin-top: 15px;">
+                        <strong>已修数学课程：</strong>
+                        <br>线性代数B1(92) | 线性代数B2(92) | 微分方程引论(98) | 概率论(91)
+                        <br>实分析(92) | 复分析(93) | 代数结构(91) | 力学A（93）
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <strong>下学期计算机课程：</strong>机器学习A | 深度学习实践 | 人工智能实践 | 软件工程实践
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <strong>下学期数学课程：</strong>泛函分析 | 微分几何 | 高等实分析
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🏆 荣誉证书</h2>
+                <div class="award-item">
+                    <strong>优秀新生奖学金</strong>
+                    <div class="time">2023年</div>
+                </div>
+                <div class="award-item">
+                    <strong>大学生数学竞赛二等奖</strong>
+                    <div class="time">2024年</div>
+                </div>
+                <div class="award-item">
+                    <strong>优秀学生奖学金铜奖</strong>
+                    <div class="time">2024年</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>💻 技能专长</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <strong>编程语言</strong>
+                        <p>Python | JavaScript<br>熟悉大部分语言的运行环境，可以使用AI有条理的快速开发各种application</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>AI框架</strong>
+                        <p>TensorFlow | PyTorch</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>英语水平</strong>
+                        <p>CET-4: 570 | CET-6: 470</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>AI工具</strong>
+                        <p>Cursor | Gemini-CLI | Claude Code</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>命令行工具</strong>
+                        <p>熟练使用各种CLI工具，基于Codex和Claude设计工作流</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🚀 项目经验</h2>
+                <ul class="project-list">
+                    <li>
+                        <strong>AI Agent自动刷题系统</strong>
+                        <p>构建AI agent自动解决ACWing算法题目，实现自动注入题解并提交。主要技术：网站爬虫、Crew AI团队构建包。</p>
+                    </li>
+                    <li>
+                        <strong>田忌赛马AI Agent</strong>
+                        <p>使用TensorFlow训练AI agent，实现策略博弈，胜率优于未训练的agent。</p>
+                    </li>
+                    <li>
+                        <strong>神经网络求解偏微分方程</strong>
+                        <p>师从香港科技大学朱子木老师，学习DGM算法，使用神经网络求解随机偏微分方程。</p>
+                    </li>
+                    <li>
+                        <strong>VAE图像生成模型</strong>
+                        <p>训练变分自编码器生成图片，以及手写数字识别模型。</p>
+                    </li>
+                    <li>
+                        <strong>RAG知识检索系统</strong>
+                        <p>构建基于检索增强生成的智能问答系统，实现文档知识库的智能检索和回答生成。</p>
+                    </li>
+                    <li>
+                        <strong>YOLO目标检测项目</strong>
+                        <p>使用YOLO算法进行实时目标检测，应用于计算机视觉任务。</p>
+                    </li>
+                    <li>
+                        <strong>网站开发项目</strong>
+                        <p>具备网站开发基础，搭建过完整的Web应用。</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="personal-statement">
+                <h2>💡 研究兴趣与自我阐述</h2>
+                <p>
+                    我是一名对AI技术充满热情的数学专业学生，主要研究兴趣集中在<strong>深度学习</strong>、
+                    <strong>多Agent协作系统</strong>和<strong>量化交易策略开发</strong>三个方向。
+                </p>
+                <p>
+                    在深度学习领域，我探索神经网络在科学计算中的应用，特别是使用深度学习方法求解偏微分方程，
+                    以及生成模型（VAE）和计算机视觉（YOLO）的实现。在多Agent协作系统方面，我专注于构建智能自动化系统，
+                    如自动解题agent和多智能体协作框架。
+                </p>
+                <p>
+                    在量化交易策略开发方向，我致力于将AI技术与金融市场分析相结合，
+                    研究如何构建基于深度学习和多Agent系统的智能交易策略。
+                </p>
+                <p>
+                    作为数学专业学生，我希望将扎实的数学基础与前沿AI技术相结合，
+                    在理论研究和工程实践之间找到平衡点。我相信数学思维能为AI算法提供更深层的理论支撑。
+                </p>
+                <p>
+                    虽然在专业技能上还有提升空间，但我一直相信自己的学习能力和钻研精神。
+                    我渴望在AI领域继续深入探索，并为推动技术发展贡献自己的力量。
+                </p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
